@@ -7,7 +7,8 @@
         "orginal_price":"85000",
         "year_of_use":"2",
         "date":"2/2/2022",
-        "cat_id":1
+        "cat_id":1,
+        "_id":"1234"
     },
     {
         "img":"https://media.istockphoto.com/id/1297236779/photo/cartoon-car-with-laggage-on-top.jpg?s=612x612&w=0&k=20&c=0VSVhsMOXWLhHj29D9YTkorIy1AxCBLspH1QDNrK4aM=",
@@ -17,7 +18,8 @@
         "orginal_price":"150987",
         "year_of_use":"3",
         "date":"22/2/2022",
-        "cat_id":1
+        "cat_id":1,
+        "_id":"2234"
     },
     {
         "img":"https://media.istockphoto.com/id/170165155/photo/silver-bus.jpg?s=612x612&w=0&k=20&c=_B6mDQfXHqOLE4uU0-wsqD8PwaOgcaiyr3bKgzEFJQA=",
@@ -27,7 +29,8 @@
         "orginal_price":"250000",
         "year_of_use":"5",
         "date":"22/5/2022",
-        "cat_id":2
+        "cat_id":2,
+        "_id":"3234"
     },
     {
         "img":"https://media.istockphoto.com/id/1195259370/photo/white-big-tour-bus-back-right-angle-view-isolated-on-white-background-3d-rendering.jpg?s=612x612&w=0&k=20&c=QZiw3f0cQvAtdvsBzapJRTGPV5l1CmW9bdz0IdpL2uo=",
@@ -37,7 +40,8 @@
         "orginal_price":"100000",
         "year_of_use":"1",
         "date":"5/7/2022",
-        "cat_id":2
+        "cat_id":2,
+        "_id":"4234"
     },
     {
         "img":"https://media.istockphoto.com/id/1427658319/photo/driving-in-the-city.jpg?s=612x612&w=0&k=20&c=oJZ1V3FbxdBkk2Hk588hC6KMs_zi3Ca7vxGvQ0X2N7w=",
@@ -48,7 +52,8 @@
         "year_of_use":"5",
         "date":"3/7/2022",
        
-        "cat_id":3
+        "cat_id":3,
+        "_id":"5234"
     },
     {
         "img":"https://media.istockphoto.com/id/172442089/photo/sports-car-in-studio-isolated-on-white-clipping-path.jpg?s=612x612&w=0&k=20&c=A69E-w8XsA0b83BenyVjeHXNCAHluk_SwfEthVrFeCY=",
@@ -58,6 +63,7 @@
         "orginal_price":"40000000",
         "year_of_use":"9",
         "date":"1/1/2022",
-        "cat_id":3
+        "cat_id":3,
+        "_id":"6234"
     }
 ]
