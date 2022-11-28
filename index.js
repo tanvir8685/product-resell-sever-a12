@@ -16,6 +16,11 @@ app.get('/vehaicel-categories',(req,res)=>{
     res.send(categories)
 })
 
+app.get('/category/:id',(req,res)=>{
+    const id=req.params.id;
+    const category_product=products.filter(product=>product.cat_id===id);
+    res.send(category_product)
+})
 
 app.get('/product/:id',(req,res)=>{
     const id=req.params.id;

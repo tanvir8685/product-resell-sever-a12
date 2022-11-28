@@ -1,18 +1,18 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Taxi",
         "cat_img": "https://media.istockphoto.com/id/539657012/photo/classic-car.jpg?s=612x612&w=0&k=20&c=jQlytH4U2iL_Y8aMej3cOXF-A09cwARIG6itE--UhLY="
 
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "Bus",
         "cat_img": "https://media.istockphoto.com/id/471817062/photo/white-bus.jpg?s=612x612&w=0&k=20&c=5txrcVk-IT9H7j5cBqVzLHaU6bAGYTJDvtjmAL61_4M="
 
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "car",
         "cat_img": "https://media.istockphoto.com/id/959391798/photo/3d-illustration-of-generic-compact-white-suv.jpg?s=612x612&w=0&k=20&c=2VqUK6i3gs1_ZbYKCEusyjhp-PqakZFsMM7xppqsqeU="
 

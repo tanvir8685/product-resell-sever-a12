@@ -7,7 +7,7 @@
         "orginal_price":"85000",
         "year_of_use":"2",
         "date":"2/2/2022",
-        "cat_id":1,
+        "cat_id":"1",
         "_id":"1234"
     },
     {
@@ -18,7 +18,7 @@
         "orginal_price":"150987",
         "year_of_use":"3",
         "date":"22/2/2022",
-        "cat_id":1,
+        "cat_id":"1",
         "_id":"2234"
     },
     {
@@ -29,7 +29,7 @@
         "orginal_price":"250000",
         "year_of_use":"5",
         "date":"22/5/2022",
-        "cat_id":2,
+        "cat_id":"2",
         "_id":"3234"
     },
     {
@@ -40,7 +40,7 @@
         "orginal_price":"100000",
         "year_of_use":"1",
         "date":"5/7/2022",
-        "cat_id":2,
+        "cat_id":"2",
         "_id":"4234"
     },
     {
@@ -52,7 +52,7 @@
         "year_of_use":"5",
         "date":"3/7/2022",
        
-        "cat_id":3,
+        "cat_id":"3",
         "_id":"5234"
     },
     {
@@ -63,7 +63,7 @@
         "orginal_price":"40000000",
         "year_of_use":"9",
         "date":"1/1/2022",
-        "cat_id":3,
+        "cat_id":"3",
         "_id":"6234"
     }
 ]
