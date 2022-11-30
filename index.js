@@ -32,28 +32,45 @@ async function run() {
     try {
         const categoriesOptionCollection = client.db('products-resell').collection('categories')
         const categoriesProductCollection = client.db('products-resell').collection('products')
+        const bokkingsCollection=client.db('products-resell').collection('bookings')
+        const userCollection=client.db('products-resell').collection('alluser')
+
+
+        // for load the all categories 
 
         app.get('/vehaicel-categories', async (req, res) => {
             const query = {};
             const categories = await categoriesOptionCollection.find(query).toArray();
             res.send(categories)
         });
+
+        // all categories product 
         app.get('/category', async (req, res) => {
             const query = {};
             const products = await categoriesProductCollection.find(query).toArray();
             res.send(products)
         });
+        // specific category product 
         app.get('/category/:id', async (req, res) => {
             const id = req.params.id;
-
-
             const query = { cat_id: id };
-
-
             const categorisProduct = await categoriesProductCollection.find(query).toArray();
-
             res.send(categorisProduct)
 
+        });
+
+        // make api for get bookings data 
+        app.post('/bookings',async(req,res)=>{
+            const bookings=req.body;
+            const result=await bokkingsCollection.insertOne(bookings);
+            res.send(result);
+        })
+
+        // make api for all user 
+        app.post('/alluser',async(req,res)=>{
+            const alluser=req.body;
+            const result=await userCollection.insertOne(alluser);
+            res.send(result);
         })
 
 
