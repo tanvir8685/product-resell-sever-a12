@@ -60,6 +60,13 @@ async function run() {
         });
 
         // make api for get bookings data 
+        app.get('/bookings', async (req, res) => {
+            const email=req.query.email;
+
+            const query = {email:email};
+            const bookingproducts = await bokkingsCollection.find(query).toArray();
+            res.send(bookingproducts)
+        });
         app.post('/bookings',async(req,res)=>{
             const bookings=req.body;
             const result=await bokkingsCollection.insertOne(bookings);
@@ -67,6 +74,11 @@ async function run() {
         })
 
         // make api for all user 
+        app.get('/alluser', async (req, res) => {
+            const query = {};
+            const alluser = await userCollection.find(query).toArray();
+            res.send(alluser)
+        });
         app.post('/alluser',async(req,res)=>{
             const alluser=req.body;
             const result=await userCollection.insertOne(alluser);
