@@ -98,7 +98,13 @@ async function run() {
 
         // make api for all user 
         app.get('/alluser', async (req, res) => {
-            const query = {};
+            console.log(req.query.categori);
+            let query = {};
+            if(req.query.categori){
+                query={
+                    categori:req.query.categori
+                }
+            } 
             const alluser = await userCollection.find(query).toArray();
             res.send(alluser)
         });
