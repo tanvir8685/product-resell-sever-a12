@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express();
 const jwt=require('jsonwebtoken')
 require('dotenv').config();
@@ -98,7 +98,7 @@ async function run() {
 
         // make api for all user 
         app.get('/alluser', async (req, res) => {
-            console.log(req.query.categori);
+            
             let query = {};
             if(req.query.categori){
                 query={
@@ -113,6 +113,14 @@ async function run() {
             const result=await userCollection.insertOne(alluser);
             res.send(result);
         });
+        // try for seller 
+        app.get('/alluser/seller/:email',async(req,res)=>{
+            const email=req.params.email;
+            const query={email};
+            const seller=await userCollection.findOne(query);
+            res.send({isSeller:seller?.categori==='seller'})
+        })
+
 
         app.get('/jwt',async(req,res)=>{
             const email=req.query.email;
@@ -125,6 +133,32 @@ async function run() {
             }
             console.log(user)
             res.status(403).send({token:""})
+        });
+        app.get('/alluser/admin/:email',async(req,res)=>{
+            const email=req.params.email;
+            const query={email}
+            const user=await userCollection.findOne(query);
+            res.send({isAdmin:user?.role==='admin'});
+        })
+        app.put('/alluser/admin/:id',verifyJWT,async(req,res)=>{
+            const decodedEmail=req.decoded.email;
+            const query={email:decodedEmail};
+            const user= await userCollection.findOne(query);
+            if(user.role !=='admin'){
+                return res.status(403).send({message:'forbidden'})
+            }
+            const id =req.params.id;
+            const filter={_id:ObjectId(id)}
+            const options={upsert:true};
+            const updatedDoc={
+                $set:{
+                    role:'admin'
+                }
+            }
+            const result =await userCollection.updateOne(filter,updatedDoc,options);
+            res.send(result);
+
+
         })
 
 
