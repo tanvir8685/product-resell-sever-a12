@@ -52,6 +52,7 @@ async function run() {
         const categoriesProductCollection = client.db('products-resell').collection('products')
         const bokkingsCollection=client.db('products-resell').collection('bookings')
         const userCollection=client.db('products-resell').collection('alluser')
+        const sellerProductCollection=client.db('products-resell').collection('sellerproduct')
 
 
         // for load the all categories 
@@ -95,6 +96,11 @@ async function run() {
             const result=await bokkingsCollection.insertOne(bookings);
             res.send(result);
         })
+        // make seller product
+        app.post('/sellerproduct',async(req,res)=>{
+            const sellerproduct=req.body;
+            const result=await sellerProductCollection.insertOne(sellerproduct);
+            res.send(result);})
 
         // make api for all user 
         app.get('/alluser', async (req, res) => {
@@ -113,12 +119,25 @@ async function run() {
             const result=await userCollection.insertOne(alluser);
             res.send(result);
         });
+        app.delete('/alluser/:id',async(req,res)=>{
+            const id=req.params.id;
+            const filter={_id:ObjectId(id)}
+            const result=await userCollection.deleteOne(filter);
+            res.send(result)
+        })
         // try for seller 
         app.get('/alluser/seller/:email',async(req,res)=>{
             const email=req.params.email;
             const query={email};
             const seller=await userCollection.findOne(query);
             res.send({isSeller:seller?.categori==='seller'})
+        })
+        // try for buyer 
+        app.get('/alluser/buyer/:email',async(req,res)=>{
+            const email=req.params.email;
+            const query={email};
+            const buyer=await userCollection.findOne(query);
+            res.send({isBuyer:buyer?.categori==='user'})
         })
 
 
@@ -134,6 +153,8 @@ async function run() {
             console.log(user)
             res.status(403).send({token:""})
         });
+
+        // admin part 
         app.get('/alluser/admin/:email',async(req,res)=>{
             const email=req.params.email;
             const query={email}
